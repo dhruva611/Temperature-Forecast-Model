@@ -1,0 +1,29 @@
+body { font-family: 'Roboto', sans-serif; background: #f4f7f6; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+
+.container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 90%; max-width: 1100px; }
+
+.card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+
+h2 { margin-top: 0; color: #333; font-size: 1.2rem; margin-bottom: 20px; }
+
+/* Form Layout */
+.grid-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.form-group { display: flex; flex-direction: column; }
+.full-width { grid-column: 1 / -1; margin-bottom: 15px; }
+
+label { font-size: 0.85rem; font-weight: bold; color: #666; margin-bottom: 5px; }
+input { padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.9rem; }
+
+button { width: 100%; background: #007bff; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; margin-top: 20px; transition: 0.3s; }
+button:hover { background: #0056b3; }
+
+/* Result Side */
+.result-card { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.temp-display { font-size: 3.5rem; font-weight: bold; color: #007bff; margin: 20px 0; }
+.unit { font-size: 1.5rem; color: #666; }
+.chart-wrapper { width: 100%; height: 300px; }
+
+.error { color: red; font-size: 0.9rem; margin-top: 10px; }
+.hidden { display: none; }
+
+@media (max-width: 768px) { .container { grid-template-columns: 1fr; } }

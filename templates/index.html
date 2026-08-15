@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Temp Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="card form-card">
+        <h2>🌦️ Weather Parameters</h2>
+        <form id="predictForm">
+            
+            <div class="form-group full-width">
+                <label>Date & Time</label>
+                <input type="datetime-local" id="date_time" required>
+            </div>
+
+            <div class="grid-inputs">
+                <div class="form-group">
+                    <label>Dew Point (°C)</label>
+                    <input type="number" id="DewPointC" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Humidity (%)</label>
+                    <input type="number" id="humidity" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Cloud Cover (%)</label>
+                    <input type="number" id="cloudcover" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>UV Index</label>
+                    <input type="number" id="uvIndex" step="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Sun Hour</label>
+                    <input type="number" id="sunHour" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Precip (MM)</label>
+                    <input type="number" id="precipMM" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Pressure (hPa)</label>
+                    <input type="number" id="pressure" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Wind (Kmph)</label>
+                    <input type="number" id="windspeedKmph" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label>Sunrise</label>
+                    <input type="time" id="sunrise" required>
+                </div>
+                <div class="form-group">
+                    <label>Sunset</label>
+                    <input type="time" id="sunset" required>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn">Predict Temperature</button>
+        </form>
+        <p id="error-msg" class="error hidden"></p>
+    </div>
+
+    <div class="card result-card">
+        <h2>Prediction</h2>
+        <div class="temp-display">
+            <span id="resultValue">--</span><span class="unit">°C</span>
+        </div>
+        <div class="chart-wrapper">
+            <canvas id="trendChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
