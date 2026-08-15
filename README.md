@@ -27,7 +27,6 @@
 - [API Reference](#api-reference)
 - [Local Setup](#local-setup)
 - [Tech Stack](#tech-stack)
-- [Authors](#authors)
 
 ---
 
